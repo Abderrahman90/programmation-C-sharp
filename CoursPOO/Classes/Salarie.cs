@@ -32,6 +32,7 @@ namespace CoursPOO.Classes
         public Salarie(string matricule, string categorie, string service, string nom, decimal salaire) : this()
         {
             Matricule = matricule;
+
             Categorie = categorie;
             Service = service;
             Nom = nom;
