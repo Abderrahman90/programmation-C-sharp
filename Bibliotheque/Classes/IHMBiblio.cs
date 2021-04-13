@@ -45,6 +45,11 @@ namespace Bibliotheque.Classes
             Console.Write("Merci de saisir le nombre d'oeuvres max : ");
             int maxOeuvres = Convert.ToInt32(Console.ReadLine());
             biblio = new Biblio(maxOeuvres, maxUtilisateurs);
+            biblio.AjouterUtilisateur(new Utilisateur("toto", 150, 5));
+            biblio.AjouterUtilisateur(new Utilisateur("titi", 140, 5));
+            biblio.AjouterOuvrage(new DVD("tenent", "nolan", 15, 180));
+            biblio.AjouterOuvrage(new BD("bd1", "auteur1", 10, 40, TypeBD.Coulour));
+            biblio.AjouterOuvrage(new BD("bd2", "auteur2", 10, 40, TypeBD.NoirEtBlanc));
         }
 
 
