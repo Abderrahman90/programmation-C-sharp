@@ -1,10 +1,11 @@
-﻿using System;
+﻿using CoursPOO.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CoursPOO.Classes
 {
-    class Chaise
+    class Chaise : IAffichable
     {
         public int nbPieds;
         public string couleur;
@@ -29,6 +30,11 @@ namespace CoursPOO.Classes
         {
             //Construire les chaises à partir d'un fichier
             return null;
+        }
+
+        public void Afficher()
+        {
+            Console.WriteLine("Afficher chaise");
         }
     }
 }

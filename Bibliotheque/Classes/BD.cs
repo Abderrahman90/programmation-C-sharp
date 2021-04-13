@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Bibliotheque.Classes
 {
-    class BD : Livre
+    sealed class BD : Livre
     {
         private TypeBD type;
 

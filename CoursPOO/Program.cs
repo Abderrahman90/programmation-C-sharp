@@ -1,4 +1,5 @@
 ﻿using CoursPOO.Classes;
+using CoursPOO.Interfaces;
 using System;
 
 namespace CoursPOO
@@ -153,7 +154,18 @@ namespace CoursPOO
             #endregion
 
             #region Correction héritage salariés
-            new IHMEntreprise().Demarrer();
+            //new IHMEntreprise().Demarrer();
+            #endregion
+
+            #region cours Interface
+            IAffichable[] tab = new IAffichable[3];
+            tab[0] = new Personne("toto", "tata", 30);
+            tab[1] = new Voiture("ford", 5);
+            tab[2] = new Chaise("5", "rouge", "bois");
+            foreach(IAffichable a in tab)
+            {
+                a.Afficher();          
+            }
             #endregion
 
         }

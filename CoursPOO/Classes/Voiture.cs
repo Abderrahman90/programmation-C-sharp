@@ -1,10 +1,11 @@
-﻿using System;
+﻿using CoursPOO.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CoursPOO.Classes
 {
-    class Voiture : Vehicule
+    class Voiture : Vehicule, IAffichable
     {
         //Attributs
         private int nbPorte;
