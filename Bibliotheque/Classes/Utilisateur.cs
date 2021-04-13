@@ -35,6 +35,7 @@ namespace Bibliotheque.Classes
                     if(Oeuvres[i]==null)
                     {
                         Oeuvres[i] = oeuvre;
+                        Solde -= oeuvre.Prix;
                         result = true;
                         break;
                     }

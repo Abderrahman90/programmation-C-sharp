@@ -86,5 +86,34 @@ namespace Bibliotheque.Classes
             }
             return result;
         }
+
+        public bool AjouterUtilisateur(Utilisateur utilisateur)
+        {
+            bool success = false;
+            for (int i = 0; i < Utilisateurs.Length; i++)
+            {
+                if (Utilisateurs[i] == null)
+                {
+                    Utilisateurs[i] = utilisateur;
+                    success = true;
+                    break;
+                }
+            }
+            return success;
+        }
+        public bool AjouterOuvrage(Ouvrage ouvrage)
+        {
+            bool success = false;
+            for (int i = 0; i < Oeuvres.Length; i++)
+            {
+                if (Oeuvres[i] == null)
+                {
+                    Oeuvres[i] = ouvrage;
+                    success = true;
+                    break;
+                }
+            }
+            return success;
+        }
     }
 }

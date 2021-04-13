@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bibliotheque.Classes;
+using System;
 
 namespace Bibliotheque
 {
@@ -6,7 +7,7 @@ namespace Bibliotheque
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            new IHMBiblio().Start();
         }
     }
 }
