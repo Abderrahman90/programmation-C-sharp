@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CoursPOO.Classes
 {
-    class Vehicule
+    abstract class Vehicule
     {
         private string model;
 
@@ -19,9 +19,6 @@ namespace CoursPOO.Classes
         {
             Model = model;
         }
-        public virtual void Afficher()
-        {
-            Console.WriteLine($"Modèle du véhicule est {Model}");
-        }
+        public abstract void Afficher();
     }
 }

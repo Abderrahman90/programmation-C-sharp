@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Bibliotheque.Classes
 {
-    class Ouvrage
+    abstract class Ouvrage
     {
         private string titre;
         private string auteur;
