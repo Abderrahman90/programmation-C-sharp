@@ -24,5 +24,48 @@ namespace Bibliotheque.Classes
             Solde = solde;
             Oeuvres = new Ouvrage[maxOeuvres];
         }
+
+        public bool AcheterOeuvre(Ouvrage oeuvre)
+        {
+            bool result = false;
+            if(Solde >= oeuvre.Prix)
+            {
+                for(int i=0; i < Oeuvres.Length;i++)
+                {
+                    if(Oeuvres[i]==null)
+                    {
+                        Oeuvres[i] = oeuvre;
+                        result = true;
+                        break;
+                    }
+                }
+            }
+            return result;
+        }
+
+        public void Echange(Ouvrage o1, Ouvrage o2)
+        {
+            for(int i=0; i< Oeuvres.Length;i++)
+            {
+                if(Oeuvres[i]==o1)
+                {
+                    Oeuvres[i] = o2;
+                    break;
+                }
+            }
+        }
+
+        public Ouvrage Rercherche(string titre)
+        {
+            Ouvrage ouvrage = null;
+            foreach(Ouvrage o in Oeuvres)
+            {
+                if(o.Titre == titre)
+                {
+                    ouvrage = o;
+                }
+            }
+            return ouvrage;
+        }
     }
 }

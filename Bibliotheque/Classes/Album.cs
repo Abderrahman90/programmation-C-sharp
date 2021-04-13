@@ -6,13 +6,24 @@ namespace Bibliotheque.Classes
 {
     class Album : Livre
     {
-        private int[] pageColoriee;
+        private bool[] pageColoriee;
 
         public Album(string titre, string auteur, decimal prix, int nombrePage) : base(titre, auteur, prix, nombrePage)
         {
-            pageColoriee = new int[nombrePage];
+            pageColoriee = new bool[nombrePage];
         }
 
-        public int[] PageColoriee { get => pageColoriee; set => pageColoriee = value; }
+        public bool[] PageColoriee { get => pageColoriee; set => pageColoriee = value; }
+
+        public bool Colorier(int numeroPage)
+        {
+            bool result = false;
+            if(!PageColoriee[numeroPage-1])
+            {
+                PageColoriee[numeroPage] = true;
+                result = true;
+            }
+            return result;
+        }
     }
 }
