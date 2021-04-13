@@ -61,9 +61,10 @@ namespace Bibliotheque.Classes
             Ouvrage ouvrage = null;
             foreach(Ouvrage o in Oeuvres)
             {
-                if(o.Titre == titre)
+                if(o!= null && o.Titre == titre)
                 {
                     ouvrage = o;
+                    break;
                 }
             }
             return ouvrage;

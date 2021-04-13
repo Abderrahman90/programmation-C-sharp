@@ -131,7 +131,7 @@ namespace Bibliotheque.Classes
                         }
                     }
                 }
-                else
+                else if(choix != 0)
                 {
                     AfficherMessage("Merci de choisir une valeur entre 1 et 3", ConsoleColor.Red);
                 }
@@ -141,11 +141,93 @@ namespace Bibliotheque.Classes
         }
         private void ActionAcheterOeuvre()
         {
+            Console.WriteLine("-----Le choix de l'utilisateur-----");
+            Utilisateur utilisateur = RechercheUtilisateur();
+            if(utilisateur!= null)
+            {
+                Console.WriteLine("----Le choix de l'oeuvre-----");
+                Ouvrage oeuvre = RechercheOeuvre();
+                if(oeuvre != null)
+                {
+                    if(biblio.Acheter(utilisateur, oeuvre))
+                    {
+                        AfficherMessage("Achat confirmé", ConsoleColor.Green);
+                    }
+                    else
+                    {
+                        AfficherMessage("Erreur d'achat", ConsoleColor.Red);
+                    }
+                }
+            }
 
         }
         private void ActionEchangerOeuvres()
         {
+            Console.WriteLine("-----Le choix de l'utilisateur 1-----");
+            Utilisateur utilisateur1 = RechercheUtilisateur();
+            if(utilisateur1!=null)
+            {
+                Console.WriteLine("-----Le choix de l'utilisateur 2-----");
+                Utilisateur utilisateur2 = RechercheUtilisateur();
+                if(utilisateur2 != null)
+                {
+                    Console.WriteLine("----Le choix de l'oeuvre 1-----");
+                    Ouvrage oeuvre1 = RechercheOeuvreUtilisateur(utilisateur1);
+                    if(oeuvre1 != null)
+                    {
+                        Console.WriteLine("----Le choix de l'oeuvre 2-----");
+                        Ouvrage oeuvre2 = RechercheOeuvreUtilisateur(utilisateur2);
+                        if(oeuvre2 != null)
+                        {
+                            if(biblio.Echanger(utilisateur1, utilisateur2, oeuvre1, oeuvre2))
+                            {
+                                AfficherMessage("Echange effectué", ConsoleColor.Green);
+                            }
+                            else
+                            {
+                                AfficherMessage("Erreur echange", ConsoleColor.Red);
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
+        private Utilisateur RechercheUtilisateur()
+        {
+            Console.Write("Merci de saisir l'id de l'utilisateur : ");
+            int id = Convert.ToInt32(Console.ReadLine());
+            Utilisateur utilisateur = biblio.RechercheUtilisateur(id);
+            if(utilisateur ==null)
+            {
+                AfficherMessage("Aucun utilisateur avec cet id", ConsoleColor.Red);
+            }
+            return utilisateur;
+        }
+
+        private Ouvrage RechercheOeuvre()
+        {
+            Console.Write("Merci de saisir le titre de l'oeuvre : ");
+            string titre = Console.ReadLine();
+            Ouvrage oeuvre = biblio.RechercheOeuvre(titre);
+            if(oeuvre == null)
+            {
+                AfficherMessage("Aucune oeuvre trouvée", ConsoleColor.Red);
+
+            }
+            return oeuvre;
+        }
+        private Ouvrage RechercheOeuvreUtilisateur(Utilisateur utilisateur)
+        {
+            Console.Write("Merci de saisir le titre de l'oeuvre : ");
+            string titre = Console.ReadLine();
+            Ouvrage oeuvre = utilisateur.Rercherche(titre);
+            if (oeuvre == null)
+            {
+                AfficherMessage("Aucune oeuvre trouvée", ConsoleColor.Red);
+
+            }
+            return oeuvre;
         }
 
         private void AfficherMessage(string message, ConsoleColor color)

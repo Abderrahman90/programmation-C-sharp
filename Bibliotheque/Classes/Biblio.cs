@@ -23,9 +23,10 @@ namespace Bibliotheque.Classes
             Ouvrage ouvrage = null;
             foreach (Ouvrage o in Oeuvres)
             {
-                if (o.Titre == titre)
+                if (o != null && o.Titre == titre)
                 {
                     ouvrage = o;
+                    break;
                 }
             }
             return ouvrage;
@@ -36,7 +37,7 @@ namespace Bibliotheque.Classes
             Utilisateur utilisateur = null;
             foreach(Utilisateur u in Utilisateurs)
             {
-                if(u.Id == id)
+                if(u != null && u.Id == id)
                 {
                     utilisateur = u;
                     break;
