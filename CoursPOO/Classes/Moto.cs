@@ -9,5 +9,10 @@ namespace CoursPOO.Classes
         private double cylindre;
 
         public double Cylindre { get => cylindre; set => cylindre = value; }
+
+        public override void Afficher()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

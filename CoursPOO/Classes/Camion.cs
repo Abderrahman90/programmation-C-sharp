@@ -10,9 +10,14 @@ namespace CoursPOO.Classes
 
         public double ChargeMax { get => chargeMax; set => chargeMax = value; }
 
-        public new void Afficher()
+        public override void Afficher()
         {
             Console.WriteLine($"Un camion de model {Model} et de charge  {ChargeMax}");
         }
+
+        //public override void Afficher()
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

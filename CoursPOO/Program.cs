@@ -158,14 +158,20 @@ namespace CoursPOO
             #endregion
 
             #region cours Interface
-            IAffichable[] tab = new IAffichable[3];
-            tab[0] = new Personne("toto", "tata", 30);
-            tab[1] = new Voiture("ford", 5);
-            tab[2] = new Chaise(5, "rouge", "bois");
-            foreach(IAffichable a in tab)
-            {
-                a.Afficher(); 
-            }
+            //IAffichable[] tab = new IAffichable[3];
+            //tab[0] = new Personne("toto", "tata", 30);
+            //tab[1] = new Voiture("ford", 5);
+            //tab[2] = new Chaise(5, "rouge", "bois");
+            //foreach(IAffichable a in tab)
+            //{
+            //    a.Afficher(); 
+            //}
+            Carre carre = new Carre(10, 10, 10);
+            Rectangle rectangle = new Rectangle(10, 10, 10, 20);
+            Figure f1 = carre.Deformation(5, 10);
+            Figure f2 = rectangle.Deformation(2, 1);
+            f1.Afficher();
+            f2.Afficher();
             #endregion
 
         }
