@@ -166,12 +166,20 @@ namespace CoursPOO
             //{
             //    a.Afficher(); 
             //}
-            Carre carre = new Carre(10, 10, 10);
-            Rectangle rectangle = new Rectangle(10, 10, 10, 20);
-            Figure f1 = carre.Deformation(5, 10);
-            Figure f2 = rectangle.Deformation(2, 1);
-            f1.Afficher();
-            f2.Afficher();
+            //Carre carre = new Carre(10, 10, 10);
+            //Rectangle rectangle = new Rectangle(10, 10, 10, 20);
+            //Figure f1 = carre.Deformation(5, 10);
+            //Figure f2 = rectangle.Deformation(2, 1);
+            //f1.Afficher();
+            //f2.Afficher();
+            #endregion
+            #region cours generique
+            Maison<int> MaisonInt = new Maison<int>(10);
+            MaisonInt.Ajouter(10);
+            Maison<Personne> maisonP = new Maison<Personne>(5);
+            maisonP.Ajouter(new Personne());
+            Maison<Voiture> maisonV = new Maison<Voiture>(6);
+            maisonV.Ajouter(new Voiture());
             #endregion
 
         }

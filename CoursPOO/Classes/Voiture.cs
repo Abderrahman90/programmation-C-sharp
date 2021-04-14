@@ -27,5 +27,17 @@ namespace CoursPOO.Classes
         {
             Console.WriteLine($"Voiture de model {Model}, avec {NbPorte} portes");
         }
+
+        //public override bool Equals(object obj)
+        //{
+        //    if(Model == (obj as Voiture).Model)
+        //    {
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    }
+        //}
     }
 }
