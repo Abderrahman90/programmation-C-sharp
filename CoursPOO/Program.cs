@@ -244,12 +244,29 @@ namespace CoursPOO
             //Calcule.EditInt(out b);
             //Console.WriteLine(b);
             //2- Passage d'un nombre indéfinis de paramètres
-
-            Calcule.Addition("coucou",10,30);
+            //Calcule.Addition("coucou",10,30);
+            //3- Utilisation des delegate pour passer des méthodes comme paramètres dans une autre méthode
+            Calcule.Calculer(10, 30,Calcule.Soustraction);
+            Calcule.Calculer(30, 40, Multiplication);
+            //Calcule.Calculer(30, 40, delegate(int a, int b) { return a / b; });
+            //Calcule.Calculer(30, 40, (int a, int b) => { return a / b; });
+            //Calcule.Calculer(30, 40, (a, b) => { return a / b; });
+            //expression lambda
+            Calcule.Calculer(30, 40, (a, b) => a / b);
+            //Calcule.Calculer(Console.WriteLine,Calcule.Soustraction, 30, 140, 10, 34);
+            //Calcule.Calculer(AfficherSpecial,Calcule.Soustraction, 30, 140, 10, 34);
             #endregion
         }
-
-
+        static void AfficherSpecial(object o)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(o);
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+        static int Multiplication(int a, int b)
+        {
+            return a * b;
+        }
         static Chaise[] CreationChaises()
         {
             Chaise[] chaises = new Chaise[3];
