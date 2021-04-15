@@ -174,12 +174,19 @@ namespace CoursPOO
             //f2.Afficher();
             #endregion
             #region cours generique
-            Maison<int> MaisonInt = new Maison<int>(10);
-            MaisonInt.Ajouter(10);
-            Maison<Personne> maisonP = new Maison<Personne>(5);
-            maisonP.Ajouter(new Personne());
-            Maison<Voiture> maisonV = new Maison<Voiture>(6);
-            maisonV.Ajouter(new Voiture());
+            //Maison<int> MaisonInt = new Maison<int>(10);
+            //MaisonInt.Ajouter(10);
+            //Maison<Personne> maisonP = new Maison<Personne>(5);
+            //maisonP.Ajouter(new Personne());
+            //Maison<Voiture> maisonV = new Maison<Voiture>(6);
+            //maisonV.Ajouter(new Voiture());
+            //Correction Pile
+            Pile<int> pileEntier = new Pile<int>(5);
+            pileEntier.Empiler(1);
+            pileEntier.Empiler(2);
+            pileEntier.Empiler(3);
+            pileEntier.Depiler();
+            Console.WriteLine(pileEntier.GetElement(1));
             #endregion
 
         }
