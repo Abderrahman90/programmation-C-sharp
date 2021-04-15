@@ -174,6 +174,7 @@ namespace CoursPOO
             //f1.Afficher();
             //f2.Afficher();
             #endregion
+
             #region cours generique
             //Maison<int> MaisonInt = new Maison<int>(10);
             //MaisonInt.Ajouter(10);
@@ -194,7 +195,7 @@ namespace CoursPOO
             //pilePersonne.GetElement(1).Afficher();
             //pilePersonne.Depiler();
             //Quelque générique du framwork.net
-            List<Personne> listePersonnes = new List<Personne>();
+            /*List<Personne> listePersonnes = new List<Personne>();
             Console.WriteLine(listePersonnes.Count);
             listePersonnes.Add(new Personne("abadi", "ihab", 30));
             listePersonnes.Add(new Personne("toto", "tata", 30));
@@ -233,12 +234,39 @@ namespace CoursPOO
             foreach (Personne p in listePersonnes)
             {
                 p.Afficher();
-            }
+            }*/
             #endregion
 
+            #region passage de paramètres
+            //1- Passage de paramètres par reference pour des variables en valeur(int,char,float,...) se fait à l'aide des mots clés ref et out            
+            //int b;
+            ////Calcule.EditInt(ref b);
+            //Calcule.EditInt(out b);
+            //Console.WriteLine(b);
+            //2- Passage d'un nombre indéfinis de paramètres
+            //Calcule.Addition("coucou",10,30);
+            //3- Utilisation des delegate pour passer des méthodes comme paramètres dans une autre méthode
+            Calcule.Calculer(10, 30,Calcule.Soustraction);
+            Calcule.Calculer(30, 40, Multiplication);
+            //Calcule.Calculer(30, 40, delegate(int a, int b) { return a / b; });
+            //Calcule.Calculer(30, 40, (int a, int b) => { return a / b; });
+            //Calcule.Calculer(30, 40, (a, b) => { return a / b; });
+            //expression lambda
+            Calcule.Calculer(30, 40, (a, b) => a / b);
+            //Calcule.Calculer(Console.WriteLine,Calcule.Soustraction, 30, 140, 10, 34);
+            //Calcule.Calculer(AfficherSpecial,Calcule.Soustraction, 30, 140, 10, 34);
+            #endregion
         }
-
-
+        static void AfficherSpecial(object o)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(o);
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+        static int Multiplication(int a, int b)
+        {
+            return a * b;
+        }
         static Chaise[] CreationChaises()
         {
             Chaise[] chaises = new Chaise[3];

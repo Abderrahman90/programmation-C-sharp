@@ -11,9 +11,9 @@ namespace CoursPOO.Classes
 
         public void Demarrer()
         {
-            Console.Write("Merci de saisir la taille de l'annuaire : ");
-            int t = Convert.ToInt32(Console.ReadLine());
-            annuaire = new Annuaire(t);
+            //Console.Write("Merci de saisir la taille de l'annuaire : ");
+            //int t = Convert.ToInt32(Console.ReadLine());
+            annuaire = new Annuaire();
             string choixMenu;
             do
             {
