@@ -6,15 +6,17 @@ namespace CoursPOO.Classes
 {
     class Annuaire
     {
-        private Contact[] contacts;
-        private int taille;
+        //private Contact[] contacts;
+        private List<Contact> contacts;
+        //private int taille;
         //private int position;
-        public Contact[] Contacts { get => contacts;}
-
-        public Annuaire(int t)
+        //public Contact[] Contacts { get => contacts;}
+        public List<Contact> Contacts { get => contacts; }
+        public Annuaire()
         {
-            taille = t;
-            contacts = new Contact[taille];
+            //taille = t;
+            //contacts = new Contact[taille];
+            contacts = new List<Contact>();
             //position = 0;
         }
 
@@ -26,31 +28,43 @@ namespace CoursPOO.Classes
             //    position++;
             //    return true;
             //}
-            bool retour = false;
-            for (int i=0; i < contacts.Length; i++)
-            {
-                if(contacts[i]== null)
-                {
-                    contacts[i] = contact;
-                    retour = true;
-                    break;
-                }
-            }
+            bool retour = true;
+            //for (int i=0; i < contacts.Length; i++)
+            //{
+            //    if(contacts[i]== null)
+            //    {
+            //        contacts[i] = contact;
+            //        retour = true;
+            //        break;
+            //    }
+            //}
+            Contacts.Add(contact);
             return retour;
         }
 
         public bool SupprimerContact(int contactId)
         {
             bool retour = false;
-            for(int i=0; i < contacts.Length; i++)
+            //for(int i=0; i < contacts.Length; i++)
+            //{
+            //    if(contacts[i] != null && contacts[i].Id == contactId)
+            //    {
+            //        contacts[i] = null;
+            //        retour = true;
+            //        break;
+            //    }
+            //}
+            Contact contact = null;
+            foreach(Contact c in contacts)
             {
-                if(contacts[i] != null && contacts[i].Id == contactId)
+                if(c.Id == contactId)
                 {
-                    contacts[i] = null;
                     retour = true;
+                    contact = c;
                     break;
                 }
             }
+            contacts.Remove(contact);
             return retour;
         }
 
