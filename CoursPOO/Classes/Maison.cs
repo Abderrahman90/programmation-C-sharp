@@ -11,6 +11,7 @@ namespace CoursPOO.Classes
         public Maison(int taille)
         {
             elements = new T[taille];
+
         }
 
         public void Ajouter(T element)
