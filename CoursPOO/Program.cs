@@ -1,6 +1,7 @@
 ﻿using CoursPOO.Classes;
 using CoursPOO.Interfaces;
 using System;
+using System.Collections.Generic;
 
 namespace CoursPOO
 {
@@ -187,12 +188,52 @@ namespace CoursPOO
             //pileEntier.Empiler(3);
             //pileEntier.Depiler();
             //Console.WriteLine(pileEntier.GetElement(1));
-            Pile<Personne> pilePersonne = new Pile<Personne>(4);
-            pilePersonne.Empiler(new Personne("toto", "tata", 30));
-            pilePersonne.Empiler(new Personne("abadi", "ihab", 33));
-            pilePersonne.GetElement(1).Afficher();
-            pilePersonne.Depiler();
-
+            //Pile<Personne> pilePersonne = new Pile<Personne>(4);
+            //pilePersonne.Empiler(new Personne("toto", "tata", 30));
+            //pilePersonne.Empiler(new Personne("abadi", "ihab", 33));
+            //pilePersonne.GetElement(1).Afficher();
+            //pilePersonne.Depiler();
+            //Quelque générique du framwork.net
+            List<Personne> listePersonnes = new List<Personne>();
+            Console.WriteLine(listePersonnes.Count);
+            listePersonnes.Add(new Personne("abadi", "ihab", 30));
+            listePersonnes.Add(new Personne("toto", "tata", 30));
+            //for(int i=0; i < listePersonnes.Count; i++)
+            //{
+            //    listePersonnes[i].Afficher();
+            //}
+            foreach(Personne p in listePersonnes)
+            {
+                p.Afficher();
+            }
+            //Pour supprimer un element d'une liste, soit on utilise la méthode remove avec la reference de l'objet à supprimer
+            //Ou on peut supprimer l'élément avec sa position
+            //listePersonnes.RemoveAt(0);
+            //foreach (Personne p in listePersonnes)
+            //{
+            //    p.Afficher();
+            //}
+            //pour supprimer un element, par exemple en fonction de son nom, 
+            //soit on utilisera des méthodes avec des expressions lambda, ou on recherche l'objet à supprimer et on le supprime ensuite.
+            Console.WriteLine("===Après suppression====");
+            Personne personneASupprimer = null;
+            foreach (Personne p in listePersonnes)
+            {
+                if (p.Nom == "toto")
+                {
+                    personneASupprimer = p;
+                    break;
+                }
+            }
+            if (personneASupprimer != null)
+            {
+                listePersonnes.Remove(personneASupprimer);
+            }
+            
+            foreach (Personne p in listePersonnes)
+            {
+                p.Afficher();
+            }
             #endregion
 
         }
