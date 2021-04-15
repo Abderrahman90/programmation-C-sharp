@@ -44,42 +44,49 @@ namespace CoursPOO.Classes
 
         public bool SupprimerContact(int contactId)
         {
-            bool retour = false;
-            //for(int i=0; i < contacts.Length; i++)
-            //{
-            //    if(contacts[i] != null && contacts[i].Id == contactId)
-            //    {
-            //        contacts[i] = null;
-            //        retour = true;
-            //        break;
-            //    }
-            //}
-            Contact contact = null;
-            foreach(Contact c in contacts)
-            {
-                if(c.Id == contactId)
-                {
-                    retour = true;
-                    contact = c;
-                    break;
-                }
-            }
-            contacts.Remove(contact);
-            return retour;
+            //bool retour = false;
+            ////for(int i=0; i < contacts.Length; i++)
+            ////{
+            ////    if(contacts[i] != null && contacts[i].Id == contactId)
+            ////    {
+            ////        contacts[i] = null;
+            ////        retour = true;
+            ////        break;
+            ////    }
+            ////}
+            ////Contact contact = null;
+            ////foreach(Contact c in contacts)
+            ////{
+            ////    if(c.Id == contactId)
+            ////    {
+            ////        retour = true;
+            ////        contact = c;
+            ////        break;
+            ////    }
+            ////}
+            ////contacts.Remove(contact);
+
+            ////Exemple d'utilisation d'expression lambda
+
+            //return retour;
+
+            return Contacts.RemoveAll(c => c.Id == contactId) > 0;
         }
 
         public Contact RechercherContact(string telephone)
         {
-            Contact contact = null;
-            foreach(Contact c in contacts)
-            {
-                if(c!=null && c.Telephone == telephone)
-                {
-                    contact = c;
-                    break;
-                }
-            }
-            return contact;
+            //Contact contact = null;
+            //foreach(Contact c in contacts)
+            //{
+            //    if(c!=null && c.Telephone == telephone)
+            //    {
+            //        contact = c;
+            //        break;
+            //    }
+            //}
+            //return contact;
+            //exemple avec expression lambda
+            return contacts.Find(c => c.Telephone == telephone);
         }
     }
 }
