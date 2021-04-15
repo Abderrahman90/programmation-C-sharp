@@ -181,12 +181,18 @@ namespace CoursPOO
             //Maison<Voiture> maisonV = new Maison<Voiture>(6);
             //maisonV.Ajouter(new Voiture());
             //Correction Pile
-            Pile<int> pileEntier = new Pile<int>(5);
-            pileEntier.Empiler(1);
-            pileEntier.Empiler(2);
-            pileEntier.Empiler(3);
-            pileEntier.Depiler();
-            Console.WriteLine(pileEntier.GetElement(1));
+            //Pile<int> pileEntier = new Pile<int>(5);
+            //pileEntier.Empiler(1);
+            //pileEntier.Empiler(2);
+            //pileEntier.Empiler(3);
+            //pileEntier.Depiler();
+            //Console.WriteLine(pileEntier.GetElement(1));
+            Pile<Personne> pilePersonne = new Pile<Personne>(4);
+            pilePersonne.Empiler(new Personne("toto", "tata", 30));
+            pilePersonne.Empiler(new Personne("abadi", "ihab", 33));
+            pilePersonne.GetElement(1).Afficher();
+            pilePersonne.Depiler();
+
             #endregion
 
         }
