@@ -174,6 +174,7 @@ namespace CoursPOO
             //f1.Afficher();
             //f2.Afficher();
             #endregion
+
             #region cours generique
             //Maison<int> MaisonInt = new Maison<int>(10);
             //MaisonInt.Ajouter(10);
@@ -194,7 +195,7 @@ namespace CoursPOO
             //pilePersonne.GetElement(1).Afficher();
             //pilePersonne.Depiler();
             //Quelque générique du framwork.net
-            List<Personne> listePersonnes = new List<Personne>();
+            /*List<Personne> listePersonnes = new List<Personne>();
             Console.WriteLine(listePersonnes.Count);
             listePersonnes.Add(new Personne("abadi", "ihab", 30));
             listePersonnes.Add(new Personne("toto", "tata", 30));
@@ -233,9 +234,19 @@ namespace CoursPOO
             foreach (Personne p in listePersonnes)
             {
                 p.Afficher();
-            }
+            }*/
             #endregion
 
+            #region passage de paramètres
+            //1- Passage de paramètres par reference pour des variables en valeur(int,char,float,...) se fait à l'aide des mots clés ref et out            
+            //int b;
+            ////Calcule.EditInt(ref b);
+            //Calcule.EditInt(out b);
+            //Console.WriteLine(b);
+            //2- Passage d'un nombre indéfinis de paramètres
+
+            Calcule.Addition("coucou",10,30);
+            #endregion
         }
 
 
